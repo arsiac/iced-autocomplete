@@ -1,0 +1,33 @@
+[package]
+name = "iced-autocomplete"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "An autocomplete text input widget with a suggestion menu for Iced."
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/arsiac/iced-autocomplete"
+keywords = ["iced", "gui", "ui", "widget", "autocomplete"]
+categories = ["gui"]
+exclude = [".github/*"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dependencies]
+iced_core = { version = "0.14.0", features = ["advanced"] }
+iced_widget = { version = "0.14.0", features = ["advanced"] }
+
+[dev-dependencies]
+iced = { version = "0.14.0", features = ["advanced"] }
+
+[lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "warn"
+
+[profile.release]
+lto = "thin"
